@@ -69,6 +69,7 @@
 
 :root {
   --radius: 0.1875rem;
+  --ink: oklch(0.17 0 0);
   --espresso: oklch(0.25 0.055 42);
   --champagne: oklch(0.96 0.012 76);
   --background: oklch(0.965 0.012 76);
