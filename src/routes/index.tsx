@@ -153,7 +153,7 @@ function Landing() {
             aria-label="Close"
             onClick={() => setOpen(false)}
             variant="ghost"
-            className="absolute inset-0 h-full w-full rounded-none bg-espresso/75 p-0 hover:bg-espresso/75"
+            className="absolute inset-0 h-full w-full rounded-none bg-ink/80 p-0 hover:bg-ink/80"
           />
           <form
             onSubmit={handleSubmit}
