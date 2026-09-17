@@ -22,6 +22,7 @@
   --font-display: "Schibsted Grotesk", sans-serif;
   --font-body: "Schibsted Grotesk", sans-serif;
   --font-editorial: Georgia, "Times New Roman", serif;
+  --color-ink: var(--ink);
   --color-espresso: var(--espresso);
   --color-champagne: var(--champagne);
   --radius-sm: calc(var(--radius) - 4px);
