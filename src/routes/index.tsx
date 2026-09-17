@@ -1,6 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import { Button } from "@/components/ui/button";
 import storefront from "@/assets/storefront.png.asset.json";
+import winkLogo from "@/assets/wink-logo.svg.asset.json";
 
 const BOOKING_URL =
   "https://winkbrowbar.zenoti.com/webstoreNew/services/188b010f-a060-4ba9-a5c0-56ffb4339479";
@@ -91,90 +94,94 @@ function Landing() {
     goToBooking();
   }
 
-  function handleSkip() {
-    markIdentified();
-    setOpen(false);
-    goToBooking();
-  }
-
   return (
-    <main className="relative min-h-screen overflow-hidden bg-background">
-      <img
-        src={storefront.url}
-        alt="Wink Brow Bar storefront on East 60th Street"
-        className="absolute inset-0 h-full w-full object-cover object-center"
-      />
-      <div className="absolute inset-0 bg-gradient-to-b from-espresso/85 via-espresso/60 to-espresso/95" />
+    <main className="min-h-screen bg-background font-body">
+      <header className="relative z-20 flex h-24 items-center justify-between border-b border-border bg-background px-5 md:px-12">
+        <a href="https://winkbrowbar.com" aria-label="Wink Brow Bar home">
+          <img src={winkLogo.url} alt="Wink Brow Bar" className="h-[70px] w-[116px] object-contain" />
+        </a>
+        <nav className="hidden items-center gap-9 text-xs text-foreground md:flex">
+          <a href="https://winkbrowbar.com/pages/our-services" className="transition-opacity hover:opacity-60">Eye Zone Services</a>
+          <a href="https://winkbrowbar.com/collections/all" className="transition-opacity hover:opacity-60">Products</a>
+          <a href="https://winkbrowbar.com/pages/about-us" className="transition-opacity hover:opacity-60">About us</a>
+        </nav>
+        <Button
+          onClick={handleBook}
+          variant="outline"
+          className="h-10 min-w-28 rounded-[3px] border-primary bg-transparent px-7 text-xs font-normal text-foreground shadow-none hover:bg-primary hover:text-primary-foreground"
+        >
+          Book
+        </Button>
+      </header>
 
-      <div className="relative flex min-h-screen flex-col">
-        <header className="flex items-center justify-between px-6 py-7 md:px-14">
-          <div className="leading-none">
-            <span className="font-script text-4xl text-foreground md:text-5xl">Wink</span>
-            <span className="mt-1 block font-body text-[0.6rem] tracking-[0.45em] text-muted-foreground">
-              BROW BAR
-            </span>
-          </div>
-          <button
-            onClick={handleBook}
-            className="border border-primary/70 px-8 py-2.5 font-body text-xs tracking-[0.28em] text-primary uppercase transition-colors hover:bg-primary hover:text-primary-foreground"
-          >
-            Book
-          </button>
-        </header>
+      <section className="relative flex min-h-[calc(100svh-6rem)] items-end overflow-hidden">
+        <img
+          src={storefront.url}
+          alt="Wink Brow Bar storefront on East 60th Street"
+          className="absolute inset-0 h-full w-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-espresso/90 via-espresso/15 to-transparent" />
 
-        <section className="flex flex-1 flex-col justify-center px-6 pb-20 pt-10 md:px-14">
-          <p className="font-body text-[0.65rem] tracking-[0.5em] text-primary uppercase">
-            New Location Open Now
-          </p>
-          <h1 className="mt-6 max-w-4xl font-display text-4xl leading-[1.08] font-light tracking-[0.06em] text-foreground uppercase sm:text-5xl md:text-7xl">
-            Precision Eye Zone Artistry Powered by the Embrowerment&reg; Method
+        <div className="relative z-10 w-full px-5 pb-12 pt-40 text-champagne md:px-12 md:pb-16">
+          <p className="text-xs font-medium uppercase tracking-[0.18em]">New location open now</p>
+          <h1 className="mt-5 max-w-4xl text-4xl font-normal leading-[1.05] uppercase sm:text-5xl md:text-7xl">
+            244 E 60th Street
           </h1>
-
-          <div className="mt-10 h-px w-24 bg-primary/50" />
-
-          <div className="mt-8 max-w-xl space-y-1 font-body text-sm tracking-[0.22em] text-foreground/90 uppercase">
-            <p>244 E 60th Street</p>
-            <p className="text-muted-foreground">Between 2nd &amp; 3rd Avenue</p>
-          </div>
-
-          <div className="mt-10 max-w-xl border border-border/70 bg-espresso/50 p-7 backdrop-blur-sm">
-            <p className="font-display text-2xl leading-snug tracking-[0.05em] text-foreground uppercase md:text-3xl">
-              Currently offering your first brow shaping for $35
-            </p>
-            <p className="mt-3 font-body text-xs tracking-[0.3em] text-primary uppercase">
-              Limited Time Only
-            </p>
-            <p className="mt-5 font-body text-[0.7rem] tracking-[0.2em] text-muted-foreground uppercase">
-              Mention at booking &middot; New clients only
-            </p>
-            <button
+          <p className="mt-3 text-sm uppercase tracking-[0.12em]">Between 2nd &amp; 3rd Avenue</p>
+          <div className="mt-8 flex flex-col items-start gap-5 sm:flex-row sm:items-center">
+            <Button
               onClick={handleBook}
-              className="mt-7 w-full bg-primary px-8 py-3.5 font-body text-xs tracking-[0.35em] text-primary-foreground uppercase transition-opacity hover:opacity-90 sm:w-auto"
+              className="h-12 rounded-[3px] bg-primary px-8 text-xs font-medium text-primary-foreground shadow-none hover:bg-primary/90"
             >
-              Book Your Appointment
-            </button>
+              Book your appointment
+            </Button>
+            <p className="max-w-lg text-base leading-relaxed md:text-lg">
+              Precision eye zone artistry powered by the Embrowerment&reg; Method
+            </p>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
+
+      <section className="grid bg-background px-5 py-12 md:grid-cols-[1fr_auto] md:items-center md:px-12 md:py-16">
+        <div>
+          <p className="text-xs font-medium uppercase tracking-[0.16em] text-muted-foreground">Limited time only</p>
+          <h2 className="mt-3 max-w-3xl text-3xl font-normal leading-tight uppercase md:text-5xl">
+            Your first brow shaping for $35
+          </h2>
+          <p className="mt-5 text-sm text-muted-foreground">Mention at booking &middot; New clients only</p>
+        </div>
+        <Button
+          onClick={handleBook}
+          variant="outline"
+          className="mt-8 h-12 rounded-[3px] border-foreground bg-transparent px-8 text-xs font-medium shadow-none hover:bg-foreground hover:text-background md:mt-0"
+        >
+          Claim the offer
+        </Button>
+      </section>
 
       {open && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center px-5">
-          <button
+        <div className="fixed inset-0 z-50 flex items-center justify-center px-5" role="dialog" aria-modal="true" aria-labelledby="booking-title">
+          <Button
             aria-label="Close"
             onClick={() => setOpen(false)}
-            className="absolute inset-0 bg-espresso/80 backdrop-blur-sm"
+            variant="ghost"
+            className="absolute inset-0 h-full w-full rounded-none bg-espresso/75 p-0 hover:bg-espresso/75"
           />
           <form
             onSubmit={handleSubmit}
-            className="relative w-full max-w-md border border-border/70 bg-card p-8 text-center"
+            className="relative w-full max-w-xl bg-card px-7 pb-10 pt-12 text-center shadow-2xl md:px-14 md:pb-14 md:pt-14"
           >
-            <span className="font-script text-3xl text-foreground">Wink</span>
-            <h2 className="mt-5 font-display text-2xl tracking-[0.06em] text-foreground uppercase">
+            <Button type="button" variant="ghost" size="icon" aria-label="Close" onClick={() => setOpen(false)} className="absolute right-3 top-3 text-muted-foreground hover:bg-transparent hover:text-foreground md:right-5 md:top-5">
+              <X />
+            </Button>
+            <h2 id="booking-title" className="font-editorial text-4xl font-normal text-foreground md:text-5xl">
               Before you book
             </h2>
-            <p className="mt-3 font-body text-sm leading-relaxed text-muted-foreground">
-              Leave your email so we can hold your $35 first brow shaping offer and send your
-              appointment details.
+            <p className="mt-8 text-xl text-muted-foreground md:text-2xl">Welcome!</p>
+            <p className="mx-auto mt-9 max-w-lg text-lg leading-relaxed text-muted-foreground md:text-2xl">
+              Enter your email to continue.<br />
+              Already booked? Use your booking email.<br />
+              New here? This email will be used for your future bookings.
             </p>
             <input
               ref={inputRef}
@@ -182,25 +189,17 @@ function Landing() {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="you@email.com"
-              className="mt-6 w-full border border-input bg-transparent px-4 py-3 font-body text-sm text-foreground placeholder:text-muted-foreground/70 focus:border-primary focus:outline-none"
+              placeholder="you@example.com"
+              className="mt-10 h-16 w-full rounded-md border border-input bg-transparent px-5 text-lg text-foreground placeholder:text-muted-foreground/70 focus:border-foreground focus:outline-none md:h-20 md:text-2xl"
             />
-            <button
+            <Button
               id="bookingEmailSubmit"
               type="submit"
               disabled={sending}
-              className="mt-4 w-full bg-primary px-6 py-3 font-body text-xs tracking-[0.3em] text-primary-foreground uppercase transition-opacity hover:opacity-90 disabled:opacity-60"
+              className="mt-5 h-16 w-full rounded-md bg-foreground px-6 text-lg font-normal text-background shadow-none hover:bg-foreground/85 md:h-20 md:text-2xl"
             >
               {sending ? "One moment…" : "Continue to booking"}
-            </button>
-            <button
-              id="bookingEmailSkip"
-              type="button"
-              onClick={handleSkip}
-              className="mt-4 font-body text-[0.7rem] tracking-[0.25em] text-muted-foreground uppercase hover:text-foreground"
-            >
-              Skip
-            </button>
+            </Button>
           </form>
         </div>
       )}
