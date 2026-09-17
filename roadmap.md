@@ -1,0 +1,1 @@
+- [ ] Match the email popup to the supplied reference and verify it opens from every booking button.
