@@ -94,12 +94,6 @@ function Landing() {
     goToBooking();
   }
 
-  function handleSkip() {
-    markIdentified();
-    setOpen(false);
-    goToBooking();
-  }
-
   return (
     <main className="min-h-screen bg-background font-body">
       <header className="relative z-20 flex h-24 items-center justify-between border-b border-border bg-background px-5 md:px-12">
