@@ -95,37 +95,26 @@ function Landing() {
   }
 
   return (
-    <main className="min-h-screen bg-background font-body">
-      <header className="relative z-20 flex h-24 items-center justify-between border-b border-border bg-background px-5 md:px-12">
-        <a href="https://winkbrowbar.com" aria-label="Wink Brow Bar home">
-          <img src={winkLogo.url} alt="Wink Brow Bar" className="h-[70px] w-[116px] object-contain" />
-        </a>
-        <nav className="hidden items-center gap-9 text-xs text-foreground md:flex">
-          <a href="https://winkbrowbar.com/pages/our-services" className="transition-opacity hover:opacity-60">Eye Zone Services</a>
-          <a href="https://winkbrowbar.com/collections/all" className="transition-opacity hover:opacity-60">Products</a>
-          <a href="https://winkbrowbar.com/pages/about-us" className="transition-opacity hover:opacity-60">About us</a>
-        </nav>
-        <Button
-          onClick={handleBook}
-          variant="outline"
-          className="h-10 min-w-28 rounded-[3px] border-primary bg-transparent px-7 text-xs font-normal text-foreground shadow-none hover:bg-primary hover:text-primary-foreground"
-        >
-          Book
-        </Button>
-      </header>
-
-      <section className="grid min-h-[calc(100svh-6rem)] bg-espresso lg:grid-cols-2">
-        <div className="flex min-h-[45svh] items-center justify-center bg-secondary p-4 sm:p-7 lg:min-h-0 lg:p-10 xl:p-14">
+    <main className="min-h-screen bg-ink font-body">
+      <section className="grid min-h-svh bg-ink lg:grid-cols-2">
+        <div className="order-2 flex min-h-[45svh] items-center justify-center p-5 sm:p-8 lg:order-1 lg:min-h-0 lg:p-12">
           <img
             src={storefront.url}
             alt="Wink Brow Bar storefront on East 60th Street"
-            className="max-h-[calc(100svh-9rem)] w-full object-contain"
+            className="max-h-[calc(100svh-6rem)] w-full object-contain"
           />
         </div>
 
-        <div className="flex items-center justify-center px-6 py-14 text-center text-champagne sm:px-12 lg:px-14 lg:py-16 xl:px-20">
+        <div className="order-1 flex items-center justify-center px-6 py-14 text-center text-champagne sm:px-12 lg:order-2 lg:px-14 lg:py-16 xl:px-20">
           <div className="w-full max-w-xl">
-            <p className="text-xs font-medium uppercase tracking-[0.2em] text-primary">New location open now</p>
+            <a href="https://winkbrowbar.com" aria-label="Wink Brow Bar home" className="inline-block">
+              <img
+                src={winkLogo.url}
+                alt="Wink Brow Bar"
+                className="h-24 w-auto [filter:brightness(0)_invert(1)] lg:h-28"
+              />
+            </a>
+            <p className="mt-8 text-xs font-medium uppercase tracking-[0.2em] text-primary">New location open now</p>
             <h1 className="mt-6 text-4xl font-medium leading-[1.05] uppercase text-primary sm:text-5xl xl:text-6xl">
               244 E 60th Street
             </h1>
