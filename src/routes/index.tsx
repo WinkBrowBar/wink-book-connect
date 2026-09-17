@@ -195,14 +195,14 @@ function Landing() {
             >
               {sending ? "One moment…" : "Continue to booking"}
             </Button>
-            <button
+            {/* <button
               id="bookingEmailSkip"
               type="button"
               onClick={handleSkip}
               className="mt-5 text-sm text-muted-foreground underline underline-offset-4 hover:text-foreground"
             >
               Skip and continue to booking
-            </button>
+            </button> */}
           </form>
         </div>
       )}
