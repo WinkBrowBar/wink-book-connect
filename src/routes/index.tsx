@@ -114,49 +114,48 @@ function Landing() {
         </Button>
       </header>
 
-      <section className="relative flex min-h-[calc(100svh-6rem)] items-end overflow-hidden">
-        <img
-          src={storefront.url}
-          alt="Wink Brow Bar storefront on East 60th Street"
-          className="absolute inset-0 h-full w-full object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-espresso/90 via-espresso/15 to-transparent" />
+      <section className="grid min-h-[calc(100svh-6rem)] bg-espresso lg:grid-cols-2">
+        <div className="flex min-h-[45svh] items-center justify-center bg-secondary p-4 sm:p-7 lg:min-h-0 lg:p-10 xl:p-14">
+          <img
+            src={storefront.url}
+            alt="Wink Brow Bar storefront on East 60th Street"
+            className="max-h-[calc(100svh-9rem)] w-full object-contain"
+          />
+        </div>
 
-        <div className="relative z-10 w-full px-5 pb-12 pt-40 text-champagne md:px-12 md:pb-16">
-          <p className="text-xs font-medium uppercase tracking-[0.18em]">New location open now</p>
-          <h1 className="mt-5 max-w-4xl text-4xl font-normal leading-[1.05] uppercase sm:text-5xl md:text-7xl">
-            244 E 60th Street
-          </h1>
-          <p className="mt-3 text-sm uppercase tracking-[0.12em]">Between 2nd &amp; 3rd Avenue</p>
-          <div className="mt-8 flex flex-col items-start gap-5 sm:flex-row sm:items-center">
+        <div className="flex items-center justify-center px-6 py-14 text-center text-champagne sm:px-12 lg:px-14 lg:py-16 xl:px-20">
+          <div className="w-full max-w-xl">
+            <p className="text-xs font-medium uppercase tracking-[0.2em] text-primary">New location open now</p>
+            <h1 className="mt-6 text-4xl font-medium leading-[1.05] uppercase text-primary sm:text-5xl xl:text-6xl">
+              244 E 60th Street
+            </h1>
+            <p className="mt-4 text-xs font-medium uppercase tracking-[0.18em] text-champagne/75 sm:text-sm">
+              Between 2nd &amp; 3rd Avenue
+            </p>
+
+            <div className="mx-auto my-10 h-px w-16 bg-primary/70" />
+
+            <p className="text-sm uppercase leading-relaxed tracking-[0.12em] text-champagne/75 sm:text-base">
+              Currently offering your first
+            </p>
+            <h2 className="mt-2 text-3xl font-medium uppercase leading-tight text-champagne sm:text-4xl">
+              Brow shaping for $35
+            </h2>
+            <p className="mt-3 text-xs tracking-[0.08em] text-champagne/60">Limited time only</p>
+
+            <div className="mt-9 border-y border-champagne/20 py-5">
+              <p className="text-sm font-medium uppercase tracking-[0.18em] text-primary">Mention at booking</p>
+              <p className="mt-2 text-xs uppercase tracking-[0.16em] text-champagne/55">New clients only</p>
+            </div>
+
             <Button
               onClick={handleBook}
-              className="h-12 rounded-[3px] bg-primary px-8 text-xs font-medium text-primary-foreground shadow-none hover:bg-primary/90"
+              className="mt-9 h-12 w-full max-w-xs rounded-[3px] bg-primary px-8 text-xs font-medium uppercase tracking-[0.12em] text-primary-foreground shadow-none hover:bg-primary/90"
             >
               Book your appointment
             </Button>
-            <p className="max-w-lg text-base leading-relaxed md:text-lg">
-              Precision eye zone artistry powered by the Embrowerment&reg; Method
-            </p>
           </div>
         </div>
-      </section>
-
-      <section className="grid bg-background px-5 py-12 md:grid-cols-[1fr_auto] md:items-center md:px-12 md:py-16">
-        <div>
-          <p className="text-xs font-medium uppercase tracking-[0.16em] text-muted-foreground">Limited time only</p>
-          <h2 className="mt-3 max-w-3xl text-3xl font-normal leading-tight uppercase md:text-5xl">
-            Your first brow shaping for $35
-          </h2>
-          <p className="mt-5 text-sm text-muted-foreground">Mention at booking &middot; New clients only</p>
-        </div>
-        <Button
-          onClick={handleBook}
-          variant="outline"
-          className="mt-8 h-12 rounded-[3px] border-foreground bg-transparent px-8 text-xs font-medium shadow-none hover:bg-foreground hover:text-background md:mt-0"
-        >
-          Claim the offer
-        </Button>
       </section>
 
       {open && (
