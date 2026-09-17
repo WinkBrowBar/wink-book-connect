@@ -86,10 +86,16 @@ function Landing() {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     const value = email.trim();
+    if (!value) return;
     setSending(true);
-    if (value) await sendIdentify(value);
-    else markIdentified();
+    await sendIdentify(value);
     setSending(false);
+    setOpen(false);
+    goToBooking();
+  }
+
+  function handleSkip() {
+    markIdentified();
     setOpen(false);
     goToBooking();
   }
@@ -175,6 +181,7 @@ function Landing() {
               ref={inputRef}
               id="bookingEmailInput"
               type="email"
+              required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="you@example.com"
@@ -188,6 +195,14 @@ function Landing() {
             >
               {sending ? "One moment…" : "Continue to booking"}
             </Button>
+            <button
+              id="bookingEmailSkip"
+              type="button"
+              onClick={handleSkip}
+              className="mt-5 text-sm text-muted-foreground underline underline-offset-4 hover:text-foreground"
+            >
+              Skip and continue to booking
+            </button>
           </form>
         </div>
       )}
