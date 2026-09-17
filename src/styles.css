@@ -19,6 +19,11 @@
  */
 
 @theme inline {
+  --font-display: "Cormorant Garamond", serif;
+  --font-body: "Jost", sans-serif;
+  --font-script: "Great Vibes", cursive;
+  --color-espresso: var(--espresso);
+  --color-champagne: var(--champagne);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
