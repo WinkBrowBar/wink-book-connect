@@ -177,7 +177,7 @@ function Landing() {
             <h2 id="booking-title" className="font-editorial text-4xl font-normal text-foreground md:text-5xl">
               Before you book
             </h2>
-            <p className="mt-8 text-xl text-muted-foreground md:text-2xl">Welcome!👋</p>
+            <p className="mt-8 text-xl text-muted-foreground md:text-2xl">Welcome!</p>
             <p className="mx-auto mt-9 max-w-lg text-lg leading-relaxed text-muted-foreground md:text-2xl">
               Enter your email to continue.<br />
               Already booked? Use your booking email.<br />
