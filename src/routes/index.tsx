@@ -175,18 +175,19 @@ function Landing() {
           />
           <form
             onSubmit={handleSubmit}
-            className="relative w-full max-w-md border border-border bg-card p-7 text-left shadow-2xl md:p-10"
+            className="relative w-full max-w-xl bg-card px-7 pb-10 pt-12 text-center shadow-2xl md:px-14 md:pb-14 md:pt-14"
           >
-            <Button type="button" variant="ghost" size="icon" aria-label="Close" onClick={() => setOpen(false)} className="absolute right-4 top-4">
+            <Button type="button" variant="ghost" size="icon" aria-label="Close" onClick={() => setOpen(false)} className="absolute right-3 top-3 text-muted-foreground hover:bg-transparent hover:text-foreground md:right-5 md:top-5">
               <X />
             </Button>
-            <img src={winkLogo.url} alt="Wink Brow Bar" className="h-16 w-24 object-contain" />
-            <h2 id="booking-title" className="mt-6 text-2xl font-normal text-foreground uppercase">
+            <h2 id="booking-title" className="font-editorial text-4xl font-normal text-foreground md:text-5xl">
               Before you book
             </h2>
-            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-              Leave your email so we can hold your $35 first brow shaping offer and send your
-              appointment details.
+            <p className="mt-8 text-xl text-muted-foreground md:text-2xl">Welcome!👋</p>
+            <p className="mx-auto mt-9 max-w-lg text-lg leading-relaxed text-muted-foreground md:text-2xl">
+              Enter your email to continue.<br />
+              Already booked? Use your booking email.<br />
+              New here? This email will be used for your future bookings.
             </p>
             <input
               ref={inputRef}
@@ -194,25 +195,16 @@ function Landing() {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="you@email.com"
-              className="mt-6 h-12 w-full rounded-[3px] border border-input bg-transparent px-4 text-sm text-foreground placeholder:text-muted-foreground/70 focus:border-primary focus:outline-none"
+              placeholder="you@example.com"
+              className="mt-10 h-16 w-full rounded-md border border-input bg-transparent px-5 text-lg text-foreground placeholder:text-muted-foreground/70 focus:border-foreground focus:outline-none md:h-20 md:text-2xl"
             />
             <Button
               id="bookingEmailSubmit"
               type="submit"
               disabled={sending}
-              className="mt-4 h-12 w-full rounded-[3px] bg-primary px-6 text-xs font-medium text-primary-foreground shadow-none hover:bg-primary/90"
+              className="mt-5 h-16 w-full rounded-md bg-foreground px-6 text-lg font-normal text-background shadow-none hover:bg-foreground/85 md:h-20 md:text-2xl"
             >
               {sending ? "One moment…" : "Continue to booking"}
-            </Button>
-            <Button
-              id="bookingEmailSkip"
-              type="button"
-              variant="ghost"
-              onClick={handleSkip}
-              className="mt-2 w-full text-xs font-normal text-muted-foreground hover:text-foreground"
-            >
-              Skip
             </Button>
           </form>
         </div>
