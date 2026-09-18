@@ -120,32 +120,32 @@ function Landing() {
                 className="h-24 w-auto [filter:brightness(0)_invert(1)] lg:h-28"
               />
             </a>
-            <p className="mt-8 text-xs font-medium uppercase tracking-[0.2em] text-primary">New location open now</p>
-            <h1 className="mt-6 text-4xl font-medium leading-[1.05] uppercase text-primary sm:text-5xl xl:text-6xl">
+            <p className="mt-8 text-xs font-bold uppercase tracking-[0.2em] text-primary">New location open now</p>
+            <h1 className="mt-6 text-4xl font-bold leading-[1.05] uppercase text-primary sm:text-5xl xl:text-6xl">
               244 E 60th Street
             </h1>
-            <p className="mt-4 text-xs font-medium uppercase tracking-[0.18em] text-champagne/75 sm:text-sm">
+            <p className="mt-4 text-xs font-light uppercase tracking-[0.18em] text-champagne/75 sm:text-sm">
               Between 2nd &amp; 3rd Avenue
             </p>
 
             <div className="mx-auto my-10 h-px w-16 bg-primary/70" />
 
-            <p className="text-sm uppercase leading-relaxed tracking-[0.12em] text-champagne/75 sm:text-base">
+            <p className="text-sm font-light uppercase leading-relaxed tracking-[0.12em] text-champagne/75 sm:text-base">
               Currently offering your first
             </p>
-            <h2 className="mt-2 text-3xl font-medium uppercase leading-tight text-champagne sm:text-4xl">
+            <h2 className="mt-2 text-3xl font-bold uppercase leading-tight text-champagne sm:text-4xl">
               Brow shaping for $35
             </h2>
-            <p className="mt-3 text-xs tracking-[0.08em] text-champagne/60">Limited time only</p>
+            <p className="mt-3 text-xs font-light tracking-[0.08em] text-champagne/60">Limited time only</p>
 
             <div className="mt-9 border-y border-champagne/20 py-5">
-              <p className="text-sm font-medium uppercase tracking-[0.18em] text-primary">Mention at booking</p>
-              <p className="mt-2 text-xs uppercase tracking-[0.16em] text-champagne/55">New clients only</p>
+              <p className="text-sm font-bold uppercase tracking-[0.18em] text-primary">Mention at booking</p>
+              <p className="mt-2 text-xs font-light uppercase tracking-[0.16em] text-champagne/55">New clients only</p>
             </div>
 
             <Button
               onClick={handleBook}
-              className="mt-9 h-12 w-full max-w-xs rounded-[3px] bg-primary px-8 text-xs font-medium uppercase tracking-[0.12em] text-primary-foreground shadow-none hover:bg-primary/90"
+              className="mt-9 h-12 w-full max-w-xs rounded-[3px] bg-primary px-8 text-xs font-bold uppercase tracking-[0.12em] text-primary-foreground shadow-none hover:bg-primary/90"
             >
               Book your appointment
             </Button>
