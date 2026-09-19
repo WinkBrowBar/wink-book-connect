@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
-import storefront from "@/assets/storefront.png.asset.json";
+import storefront from "@/assets/studiofront.jpg.asset.json";
 import winkLogo from "@/assets/wink-logo.svg.asset.json";
 
 const BOOKING_URL =
@@ -106,7 +106,7 @@ function Landing() {
         <div className="order-2 flex min-h-[45svh] items-center justify-center p-5 sm:p-8 lg:order-1 lg:min-h-0 lg:p-12">
           <img
             src={storefront.url}
-            alt="Wink Brow Bar storefront on East 60th Street"
+            alt="Wink Brow Bar studio front at 244 East 60th Street"
             className="max-h-[calc(100svh-6rem)] w-full object-contain"
           />
         </div>
@@ -121,7 +121,7 @@ function Landing() {
               />
             </a>
             <p className="mt-8 text-xs font-bold uppercase tracking-[0.2em] text-primary">New location open now</p>
-            <h1 className="mt-6 text-4xl font-bold leading-[1.05] uppercase text-primary sm:text-5xl xl:text-6xl">
+            <h1 className="mt-6 text-4xl font-bold uppercase leading-[1.05] tracking-[0.1em] text-primary sm:text-5xl xl:text-6xl">
               244 E 60th Street
             </h1>
             <p className="mt-4 text-xs font-light uppercase tracking-[0.18em] text-champagne/75 sm:text-sm">
@@ -133,7 +133,7 @@ function Landing() {
             <p className="text-sm font-light uppercase leading-relaxed tracking-[0.12em] text-champagne/75 sm:text-base">
               Currently offering your first
             </p>
-            <h2 className="mt-2 text-3xl font-bold uppercase leading-tight text-champagne sm:text-4xl">
+            <h2 className="mt-2 text-3xl font-bold uppercase leading-tight tracking-[0.1em] text-champagne sm:text-4xl">
               Brow shaping for $35
             </h2>
             <p className="mt-3 text-xs font-light tracking-[0.08em] text-champagne/60">Limited time only</p>
